@@ -1,0 +1,28 @@
+{
+  "name": "Webpack Typescript Extension",
+  "version": "1.0",
+  "description": "An example of a Webpack extension using Typescript",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*"
+      ],
+      "js": [
+        "api_exporter.js"
+      ]
+    }
+  ]
+}
